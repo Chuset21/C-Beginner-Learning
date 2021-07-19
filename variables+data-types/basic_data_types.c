@@ -7,6 +7,22 @@ int main() {
     // with C99
     bool boolean = true;
 
+    enum primaryColor {
+        red, green, blue
+    };
+
+    enum direction {
+        up, // 0
+        down, // 1
+        left = 10, // 10
+        right // 11
+    };
+
+    enum primaryColor g = red;
+    char six = '6';
+
+    bool isRed = g == red;
+
     return 0;
 }
 
