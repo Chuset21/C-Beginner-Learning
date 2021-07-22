@@ -59,11 +59,11 @@ int main() {
     printf("\nOriginal String:\n%s\n", original);
 
     char lower[sizeof original];
-    for (int i = 0; (lower[i] = tolower(original[i])); i++);
+    for (int i = 0; (lower[i] = tolower(original[i])) != '\0'; i++);
     printf("\nLowercase String:\n%s\n", lower);
 
     char upper[sizeof original];
-    for (int i = 0; (upper[i] = toupper(original[i])); i++);
+    for (int i = 0; (upper[i] = toupper(original[i])) != '\0'; i++);
     printf("\nUppercase String:\n%s\n", upper);
 
     return 0;
