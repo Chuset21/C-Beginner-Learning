@@ -12,17 +12,44 @@ int main() {
 
     // strncat()
     char src[50];
-    strncpy(src, "This is the source ", sizeof(src) - 1);
+    strncpy(src, "This is the source", sizeof(src) - 1);
     char input[80];
 
     printf("Enter a string to be concatenated: ");
     scanf("%s", input);
 
     printf("%s concatenated with %s is:\n", src, input);
-    printf("%s", strncat(src, input, sizeof(src) - 1));
+    printf("%s\n\n", strncat(src, input, sizeof(src) - 1));
 
     // strcmp() works like compare in Java
     // strncmp() is used to limit the amount of characters compared
+
+    // More advanced functions
+    // strchr()
+    const char string[] = "The quick brown fox";
+    const char ch = 'q';
+    char *pGotChar;
+    pGotChar = strchr(string, ch);
+    printf("%s\n", pGotChar);
+
+    // strstr()
+    const char text[] = "Every dog has his day";
+    const char word[] = "dog";
+    char *pFound;
+    pFound = strstr(text, word);
+    printf("%s\n", pFound);
+
+    // strtok()
+    char str[] = "Hello how are you - my name is - Jason";
+    const char s[] = "-";
+    char *token;
+
+    token = strtok(str, s);
+
+    while (token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, s);
+    }
 
     return 0;
 }
