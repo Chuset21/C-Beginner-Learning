@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main() {
     const char myString[] = "Hello";
@@ -23,6 +24,7 @@ int main() {
 
     // strcmp() works like compare in Java
     // strncmp() is used to limit the amount of characters compared
+
 
     // More advanced functions
     // strchr()
@@ -50,6 +52,19 @@ int main() {
         printf("%s\n", token);
         token = strtok(NULL, s);
     }
+
+
+    // Converting Strings
+    const char original[] = "Hello World!!!\nThis is CRAZY!";
+    printf("\nOriginal String:\n%s\n", original);
+
+    char lower[sizeof original];
+    for (int i = 0; (lower[i] = tolower(original[i])); i++);
+    printf("\nLowercase String:\n%s\n", lower);
+
+    char upper[sizeof original];
+    for (int i = 0; (upper[i] = toupper(original[i])); i++);
+    printf("\nUppercase String:\n%s\n", upper);
 
     return 0;
 }
